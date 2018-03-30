@@ -23,7 +23,7 @@ setup(
     version=__import__('eav').__version__,
     license = 'GNU Lesser General Public License (LGPL), Version 3',
 
-    requires = ['python (>= 2.5)', 'django (>= 1.2)'],
+    requires = ['python (>= 2.5)', 'django (>= 1.2)', 'six'],
     provides = ['eav'],
 
     description='Entity-attribute-value model implementation as a reusable'
@@ -32,7 +32,7 @@ setup(
 
     url='http://github.com/mvpdev/django-eav',
 
-    packages=['eav', 'eav.tests'],
+    packages=['eav', 'eav.tests', 'eav.migrations'],
 
     classifiers  = [
         'Development Status :: 4 - Beta',

@@ -32,6 +32,7 @@ Along with the :class:`Entity` helper class.
 Classes
 -------
 '''
+from builtins import object
 
 from datetime import datetime
 
@@ -151,9 +152,9 @@ class Attribute(models.Model):
                  change it's datatype.
     '''
 
-    class Meta:
-        ordering = ['name']
-        unique_together = ('site', 'slug')
+    class Meta(object):
+        ordering = ['content_type', 'name']
+        unique_together = ('site', 'content_type', 'slug')
 
     TYPE_TEXT = 'text'
     TYPE_FLOAT = 'float'
